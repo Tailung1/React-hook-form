@@ -46,13 +46,16 @@ function App() {
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <input type="text" {...register("name")} />
+        <label htmlFor="name">Name</label>
+        <input type="text" {...register("name")} id="name" placeholder="Name" />
         {errors.name && <p>{errors.name.message}</p>}
 
-        <input type="text " {...register("lastName")} />
+        <label htmlFor="LastName">LastName</label>
+        <input type="text " {...register("lastName")} id="LastName" placeholder="LastName" />
         {errors.lastName && <p>{errors.lastName.message}</p>}
 
-        <input type="text " {...register("Email")} />
+        <label htmlFor="Email">Email</label>
+        <input type="text " {...register("Email")} id="Email" placeholder="Email" />
         {errors.Email && <p>{errors.Email.message}</p>}
 
         <button type="submit">Submit</button>
