@@ -30,11 +30,13 @@ function App() {
     register,
     handleSubmit,
     watch,
+    setValue,
     formState: { errors },
   } = useForm<Inputs>({ resolver: yupResolver(schema) });
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     console.log(data); // consols only when all input are valid
+    setValue("name", "done")
   };
 
   //   const name = watch("name"); // colsols only name property
