@@ -36,7 +36,7 @@ function App() {
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     console.log(data); // consols only when all input are valid
-    setValue("name", "done")
+    setValue("name", "done");
   };
 
   //   const name = watch("name"); // colsols only name property
@@ -51,11 +51,21 @@ function App() {
         {errors.name && <p>{errors.name.message}</p>}
 
         <label htmlFor="LastName">LastName</label>
-        <input type="text " {...register("lastName")} id="LastName" placeholder="LastName" />
+        <input
+          type="text "
+          {...register("lastName")}
+          id="LastName"
+          placeholder="LastName"
+        />
         {errors.lastName && <p>{errors.lastName.message}</p>}
 
         <label htmlFor="Email">Email</label>
-        <input type="text " {...register("Email")} id="Email" placeholder="Email" />
+        <input
+          type="text "
+          {...register("Email")}
+          id="Email"
+          placeholder="Email"
+        />
         {errors.Email && <p>{errors.Email.message}</p>}
 
         <button type="submit">Submit</button>
