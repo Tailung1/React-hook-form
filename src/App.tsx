@@ -16,7 +16,12 @@ function App() {
     lastName: yup
       .string()
       .required("LastName must not be empty")
-      .min(5, "Name must not be more than 5 charachters"),
+      .min(5, "Name must not be more than 5 charachters")
+      .test(
+        "no-spaces",
+        "LastName must not include space charachter",
+        (value) => !value.includes(" ")
+      ),
 
     Email: yup.string().email().required("Email must not be empty"),
   });
